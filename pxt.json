@@ -1,0 +1,15 @@
+{
+    "name": "fio5",
+    "version": "0.0.1",
+    "description": "Extension for FIO5",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh/fio5-strings.json"
+    ],
+    "public": true
+}
