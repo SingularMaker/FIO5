@@ -1,15 +1,19 @@
+/*
+ fio5 package
+*/
+
 //% weight=0 color=#3CB371 icon="\uf1b9"
 namespace fio5 {
 	export enum MotorLocation {
-		M1 = 0x01,//% p15,p16
-		M2 = 0x02,//% p14,p13
-		M3 = 0x03,//% p12,p11
-		M4 = 0x04//% p10,p09
+		M1 = 0x01,
+		M2 = 0x02,
+		M3 = 0x03,
+		M4 = 0x04
 	}	
 
 	export enum MotorDir {
-		CW = 0x01,//% p15,p16
-		CCW = 0x02//% p14,p13
+		CW = 0x01,
+		CCW = 0x02
 	}	
 	
     /** 
@@ -27,7 +31,7 @@ namespace fio5 {
 		} else {
 			ctrl_1 = speed;			
 		}
-		
+/*		
 		if (pos == MotorLocation.M1 ) {
           pins.analogWritePin(AnalogPin.P15, ctrl_0);
           pins.analogWritePin(AnalogPin.P16, ctrl_1);
@@ -47,4 +51,5 @@ namespace fio5 {
           pins.analogWritePin(AnalogPin.P9, ctrl_1);		
 		}
     }
+*/	
 }
