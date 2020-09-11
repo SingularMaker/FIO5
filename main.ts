@@ -49,6 +49,7 @@ namespace fio5 {
           pins.analogWritePin(AnalogPin.P10, ctrl_0);
           pins.analogWritePin(AnalogPin.P9, ctrl_1);		
 		}
+*/		
     }
-*/	
+	
 }
