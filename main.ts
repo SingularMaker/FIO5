@@ -25,9 +25,11 @@ namespace fio5 {
         let ctrl_0 = 0;
 	let ctrl_1 = 0;
           		
-	if(dir == MotorDir.CW) {
+	if(MotorDir.CW == dir) {
 		ctrl_0 = speed;
+		ctrl_1 = 0;
 	} else {
+		ctrl_0 = 0;
 		ctrl_1 = speed;			
 	}
 		
