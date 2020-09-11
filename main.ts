@@ -23,32 +23,31 @@ namespace fio5 {
     //% speed.min=0 speed.max=1023
     export function motor_fn(pos: MotorLocation, dir: MotorDir, speed: number):void {
         let ctrl_0 = 0;
-		let ctrl_1 = 0;
+	let ctrl_1 = 0;
           		
-		if(dir == MotorDir.CW) {
-			ctrl_0 = speed;
-		} else {
-			ctrl_1 = speed;			
-		}
+	if(dir == MotorDir.CW) {
+		ctrl_0 = speed;
+	} else {
+		ctrl_1 = speed;			
+	}
 		
-		if (pos == MotorLocation.M1 ) {
-          pins.analogWritePin(AnalogPin.P15, ctrl_0);
-          pins.analogWritePin(AnalogPin.P16, ctrl_1);
-		}
-		if ( pos == MotorLocation.M2 ) {
-          pins.analogWritePin(AnalogPin.P14, ctrl_0);
-          pins.analogWritePin(AnalogPin.P13, ctrl_1);			
-		}
+	if (pos == MotorLocation.M1 ) {
+        	pins.analogWritePin(AnalogPin.P16, ctrl_0);
+          	pins.analogWritePin(AnalogPin.P15, ctrl_1);
+	}
+	if ( pos == MotorLocation.M2 ) {
+        	pins.analogWritePin(AnalogPin.P14, ctrl_0);
+          	pins.analogWritePin(AnalogPin.P13, ctrl_1);			
+	}
 		
-		if ( pos == MotorLocation.M3 ) {
-          pins.analogWritePin(AnalogPin.P12, ctrl_0);
-          pins.analogWritePin(AnalogPin.P11, ctrl_1);			
-		}
+	if ( pos == MotorLocation.M3 ) {
+         	pins.analogWritePin(AnalogPin.P12, ctrl_0);
+         	pins.analogWritePin(AnalogPin.P11, ctrl_1);			
+	}
 		
-		if ( pos == MotorLocation.M4 ) {
-          pins.analogWritePin(AnalogPin.P10, ctrl_0);
-          pins.analogWritePin(AnalogPin.P9, ctrl_1);		
-		}
-		
+	if ( pos == MotorLocation.M4 ) {
+        	pins.analogWritePin(AnalogPin.P10, ctrl_0);
+          	pins.analogWritePin(AnalogPin.P9, ctrl_1);		
+	}	
     }
 }
