@@ -21,7 +21,7 @@ namespace fio5 {
 	*/
     //% weight=120 blockId="motor_fn" block="Set Motor|position %pos|direction %dir|speed %speed"
     //% speed.min=0 speed.max=1023
-    export function motor_fn(pos: MotorLocation, dir: MotorDir, speed: number) {
+    export function motor_fn(pos: MotorLocation, dir: MotorDir, speed: number):void {
         let ctrl_0 = 0;
 		let ctrl_1 = 0;
           		
