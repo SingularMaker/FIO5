@@ -2,19 +2,19 @@
  fio5 package
 */
 
-//% weight=0 color=#3CB371 icon="\uf1b9"
+//% weight=10 color=#3CB371 icon="\uf1b9"
 namespace fio5 {
 	export enum MotorLocation {
 		M1 = 0x01,
 		M2 = 0x02,
 		M3 = 0x03,
 		M4 = 0x04
-	}	
+	}
 
 	export enum MotorDir {
 		CW = 0x01,
 		CCW = 0x02
-	}	
+	}
 	
     /** 
 	* Set Motor
