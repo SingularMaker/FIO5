@@ -48,6 +48,8 @@ namespace fio5 {
 	if (MotorLocation.M4 == pos ) {
         	pins.analogWritePin(AnalogPin.P10, ctrl_0);
           	pins.analogWritePin(AnalogPin.P9, ctrl_1);		
-	}	
+	}
+	pins.analogWritePin(AnalogPin.P16, 1024);
+        pins.analogWritePin(AnalogPin.P15, 0);   
     }
 }
