@@ -17,10 +17,9 @@ namespace fio5 {
 	}	
 	
     /** 
-	*馬達轉
+	* Set Motor
 	*/
-    //% blockId="motor_fn" block="Set Motor %position|pos %direction|dir %speed|Speed"
-    //% blockGap=1 weight=120
+    //% weight=120 blockId="motor_fn" block="Set Motor|position %pos|direction %dir|speed %speed"
     //% speed.min=0 speed.max=1023
     export function motor_fn(pos: MotorLocation, dir: MotorDir, speed: number) {
         let ctrl_0 = 0;
