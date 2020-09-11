@@ -12,8 +12,10 @@ namespace fio5 {
 		CCW = 1//% p14,p13
 	}	
 	
-    /** 馬達轉*/
-    //% blockId="foreward" block="Set Motor %position|pos %direction|dir %speed|Speed"
+    /** 
+	*馬達轉
+	*/
+    //% blockId="motor_fn" block="Set Motor %position|pos %direction|dir %speed|Speed"
     //% blockGap=1 weight=120
     //% speed.min=0 speed.max=1023
     export function motor_fn(pos: MotorLocation, dir: MotorDir, speed: number) {
