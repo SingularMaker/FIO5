@@ -24,7 +24,7 @@ namespace fio5 {
     export function motor_fn(pos: MotorLocation, dir: MotorDir, speed: number):void {
         let ctrl_0 = 0;
 		let ctrl_1 = 0;
-   /*       		
+          		
 		if(dir == MotorDir.CW) {
 			ctrl_0 = speed;
 		} else {
@@ -49,7 +49,6 @@ namespace fio5 {
           pins.analogWritePin(AnalogPin.P10, ctrl_0);
           pins.analogWritePin(AnalogPin.P9, ctrl_1);		
 		}
-*/		
+		
     }
-	
 }
