@@ -31,21 +31,21 @@ namespace fio5 {
 		ctrl_1 = speed;			
 	}
 		
-	if (pos == MotorLocation.M1 ) {
+	if (MotorLocation.M1 == pos) {
         	pins.analogWritePin(AnalogPin.P16, ctrl_0);
           	pins.analogWritePin(AnalogPin.P15, ctrl_1);
 	}
-	if ( pos == MotorLocation.M2 ) {
+	if (MotorLocation.M2 == pos) {
         	pins.analogWritePin(AnalogPin.P14, ctrl_0);
           	pins.analogWritePin(AnalogPin.P13, ctrl_1);			
 	}
 		
-	if ( pos == MotorLocation.M3 ) {
+	if (MotorLocation.M3 == pos) {
          	pins.analogWritePin(AnalogPin.P12, ctrl_0);
          	pins.analogWritePin(AnalogPin.P11, ctrl_1);			
 	}
 		
-	if ( pos == MotorLocation.M4 ) {
+	if (MotorLocation.M4 == pos ) {
         	pins.analogWritePin(AnalogPin.P10, ctrl_0);
           	pins.analogWritePin(AnalogPin.P9, ctrl_1);		
 	}	
