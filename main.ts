@@ -44,4 +44,11 @@ namespace fio5 {
           pins.analogWritePin(AnalogPin.P9, ctrl_1);		
 		}
     }
+	
+	/**
+    * singularbot board initialization, please execute at boot time
+	*/
+	//% weight=100 blockId=singularbotInit block="Initialize singularbot"
+	export function singularbotInit() {
+	}	
 }
