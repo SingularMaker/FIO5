@@ -72,7 +72,7 @@ namespace fio5 {
     /** 
 	* Set Lamp
 	*/
-    //% weight=120 blockId="SetLamp" block="SetLamp|position %pos|switch %Switch"	
+    //% weight=120 blockId="SetLamp" block="SetLamp|position %pos|switch %status"	
     export function SetLamp(pos: LampPosition, status: Switch):void {
 		
 		switch(pos) {
