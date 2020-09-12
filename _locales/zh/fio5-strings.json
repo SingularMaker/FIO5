@@ -1,4 +1,4 @@
 {
     "fio5|block": "奇點FIO5",
-	"fio5.motor_fn|block": "設定馬達|位置 %pos|方向 %dir|速度 %speed"
+	"fio5.SetMotor|block": "設定馬達|位置 %pos|方向 %dir|速度 %speed"
 }
