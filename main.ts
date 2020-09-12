@@ -29,7 +29,7 @@ namespace fio5 {
 
 	export enum Switch {
 		OFF = 0x00,
-		ON = 0x01,	
+		ON = 0x01
 	}
 
     /** 
