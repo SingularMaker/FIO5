@@ -1,4 +1,4 @@
 {
-    "fio5|block": "奇點機器人",
+	"fio5|block": "奇點機器人",
 	"fio5.SetMotor|block": "設定馬達|位置 %pos|方向 %dir|速度 %speed"
 }
