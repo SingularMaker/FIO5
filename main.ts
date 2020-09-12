@@ -2,7 +2,7 @@
  fio5 package
 */
 
-//% weight=10 blockId="fio5" block="FIO5" color=#3CB371 icon="\uf1b9"
+//% weight=10 color=#3CB371 icon="\uf1b9" blockId="fio5" block="fio5"
 namespace fio5 {
 	export enum MotorLocation {
 		M1 = 0x01,
