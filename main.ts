@@ -123,7 +123,7 @@ namespace fio5 {
     export function UntilButtonPress(button: Button, status: ButtonStatus):void {
 		
 		while(true) {
-			if(staus == input.buttonIsPressed(button)) {
+			if(status == input.buttonIsPressed(button)) {
 				break;
 			}
 
