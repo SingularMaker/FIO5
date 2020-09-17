@@ -120,10 +120,11 @@ namespace fio5 {
 	* Until Button Press
 	*/
     //% weight=120 blockId="UntilButtonPress" block="Until Button Press|Button %button|Status %status"	
-    export function UntilButtonPress(button: Button, status: boolean):void {
+    export function UntilButtonPress(button: Button, status: ButtonStatus):void {
 		
-		while(true) {
-			if( status == input.buttonIsPressed(button) ) {
+		while (true) {
+			let tmp = input.buttonIsPressed(button);
+			if( status == tmp ) {
 				break;
 			}
 
