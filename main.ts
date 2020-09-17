@@ -31,6 +31,17 @@ namespace fio5 {
 		OFF = 0x00,
 		ON = 0x01
 	}
+/*
+	export enum ButtonName {
+		Button_A = 0x00,
+		Button_B = 0x01,
+		Button_AB = 0x02
+	}
+*/
+	export enum ButtonStatus {
+		OFF = 0x00,
+		ON= 0x01
+	}
 
     /** 
 	* Set Motor
@@ -103,5 +114,19 @@ namespace fio5 {
 			default:
 				break;			
 		}
-    }	
+	}
+	
+    /** 
+	* Until Button Press
+	*/
+    //% weight=120 blockId="UntilButtonPress" block="Until Button Press|Button %button|Status %status"	
+    export function UntilButtonPress(button: Button, status: ButtonStatus):void {
+		
+		while(true) {
+			if(staus == input.buttonIsPressed(button)) {
+				break;
+			}
+
+		}
+    }		
 }
