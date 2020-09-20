@@ -27,22 +27,39 @@ namespace fio5 {
 		O8 = 0x08	
 	}
 
+	export enum InputPosition {
+		I1 = 0x01,
+		I2 = 0x02,
+		I3 = 0x03,
+		I4 = 0x04,
+		I5 = 0x05,
+		I6 = 0x06	
+	}	
+
 	export enum Switch {
 		OFF = 0x00,
 		ON = 0x01
 	}
-/*
-	export enum ButtonName {
-		A = 0x00,
-		B = 0x01,
-		AB = 0x02
-	}
-*/
+
 	export enum ButtonStatus {
 		Release = 0x00,
-		Press= 0x01
+		Press = 0x01
 	}
 
+	export enum Sensor {
+		PushButton = 0x00,
+		Phototransistor = 0x01,
+		ReedSwitch = 0x02,
+		Trail = 0x03
+	}
+
+	export enum SensorStatus {
+		Zero = 0x00,
+		One = 0x01,
+		Rising = 0x02,
+		Falling = 0x03,
+		Both = 0x04,
+	}
     /** 
 	* Set Motor
 	*/
@@ -117,7 +134,7 @@ namespace fio5 {
 	}
 	
     /** 
-	* Until Button Press
+	* Until Button Press or Rlease
 	*/	
     //% weight=120 blockId="UntilButtonPress" block="Until|Button %button|Is %status"	
     export function UntilButtonPress(button: Button, status: ButtonStatus):void {		
@@ -127,5 +144,67 @@ namespace fio5 {
 			    break;
 		    }
         }    
-    }			
+	}
+	
+    /** 
+	* Until Sensor trigger or release
+	*/	
+	//% weight=120 blockId="UntilMatchSensor" block="Wait for|Input %pos|Sensor %Sensor|to %status"	
+	//% status.min=0 status.max=1
+    export function WaitForSensor(pos: InputPosition, sensor: Sensor, status: SensorStatus):void {	
+		let pin_name = DigitalPin.P1;
+
+        switch(pos) {
+			case InputPosition.I1:
+				pin_name = DigitalPin.P1;
+				break;
+			case InputPosition.I2:
+				pin_name = DigitalPin.P6;
+				break;				
+			case InputPosition.I3:
+				pin_name = DigitalPin.P4;
+				break;
+			case InputPosition.I4:
+				pin_name = DigitalPin.P0;
+				break;
+			case InputPosition.I5:
+				pin_name = DigitalPin.P3;
+				break;
+			case InputPosition.I6:
+				pin_name = DigitalPin.P2;
+				break;				
+			default:
+				break;			
+		}
+		let old_val = pins.digitalReadPin(pin_name);
+        let conditon = 1;
+
+        while (conditon) {
+            let new_val = pins.digitalReadPin(pin_name);
+            switch(status) {
+                case SensorStatus.Zero:
+                    if(new_val == 0)
+                        conditon = 0;
+                    break;
+                case SensorStatus.One:
+                    if(new_val == 1)
+                        conditon = 0;
+                    break;				
+                case SensorStatus.Rising:
+                    if(old_val == 0 && new_val == 1)
+                        conditon = 0;
+                    break;
+                case SensorStatus.Falling:
+                    if(old_val == 1 && new_val == 0)
+                        conditon = 0;
+                    break;
+                case SensorStatus.Both:
+                    if(old_val != new_val)
+                        conditon = 0;
+                    break;				
+                default:
+                    break	       
+            }
+        }  
+    }		
 }
