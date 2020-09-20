@@ -2,5 +2,5 @@
 	"fio5|block":"奇點機器人",
 	"fio5.SetMotor|block":"設定馬達|位置 %pos|方向 %dir|速度 %speed",
 	"fio5.SetLamp|block":"設定燈泡|位置 %pos|開關 %status",
-	"fio5.UntilButtonPress|block":"直到|按扭 %button|按下"
+	"fio5.UntilButtonPress|block":"直到|按扭 %button|被 %status"
 }
