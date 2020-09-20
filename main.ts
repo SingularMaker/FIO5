@@ -39,8 +39,8 @@ namespace fio5 {
 	}
 */
 	export enum ButtonStatus {
-		OFF = 0x00,
-		ON= 0x01
+		Release = 0x00,
+		Press= 0x01
 	}
 
     /** 
@@ -118,13 +118,14 @@ namespace fio5 {
 	
     /** 
 	* Until Button Press
-	*/
-    //% weight=120 blockId="UntilButtonPress" block="Until|Button %button Press"	
-    export function UntilButtonPress(button: Button):void {		
-		while (true) {
-			if ( input.buttonIsPressed(button) ) {
-				break;
-			}
-		}
-    }		
+	*/	
+    //% weight=120 blockId="UntilButtonPress" block="Until|Button %button|is %status"	
+    export function UntilButtonPress(status: ButtonStatus, button: Button):void {		
+        while(true) {
+            let value = input.buttonIsPressed(button)? 1: 0;     
+		    if ( status == value ) {
+			    break;
+		    }
+        }    
+    }			
 }
