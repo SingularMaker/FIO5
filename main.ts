@@ -181,6 +181,7 @@ namespace fio5 {
 
         while (conditon) {
             let new_val = pins.digitalReadPin(pin_name);
+            //basic.showNumber(new_val)
             switch(status) {
                 case SensorStatus.Zero:
                     if(new_val == 0)
@@ -191,24 +192,32 @@ namespace fio5 {
                         conditon = 0;
                     break;				
                 case SensorStatus.Rising:
-                    if(old_val == 0 && new_val == 1)
-						conditon = 0;
-					else 
-						old_val = new_val;
+                    new_val = pins.digitalReadPin(pin_name);
+                    if(old_val == 0 && new_val == 1) {
+                        conditon = 0;
+                    } else {
+						old_val = new_val
+                        basic.pause(1)                      
+                    }
                     break;
                 case SensorStatus.Falling:
-                    if(old_val == 1 && new_val == 0)
-						conditon = 0;
-					else
+                    if(old_val == 1 && new_val == 0) {
+                        conditon = 0;
+                    } else {
 						old_val = new_val
+                        basic.pause(1)
+                    }
                     break;
                 case SensorStatus.Both:
-                    if(old_val != new_val)
+                    if(old_val != new_val) {
                         conditon = 0;
-                    break;				
+                    } else {
+                        old_val = new_val
+                        basic.pause(1)
+                    }				
                 default:
                     break	       
             }
-        }  
+        }    
     }		
 }
