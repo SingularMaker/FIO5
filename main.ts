@@ -192,11 +192,15 @@ namespace fio5 {
                     break;				
                 case SensorStatus.Rising:
                     if(old_val == 0 && new_val == 1)
-                        conditon = 0;
+						conditon = 0;
+					else 
+						old_val = new_val;
                     break;
                 case SensorStatus.Falling:
                     if(old_val == 1 && new_val == 0)
-                        conditon = 0;
+						conditon = 0;
+					else
+						old_val = new_val
                     break;
                 case SensorStatus.Both:
                     if(old_val != new_val)
