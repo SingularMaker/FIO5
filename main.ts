@@ -149,7 +149,7 @@ namespace fio5 {
     /** 
 	* Until Sensor trigger or release
 	*/	
-	//% weight=120 blockId="UntilMatchSensor" block="Wait for|Input %pos|Sensor %Sensor|to %status"	
+	//% weight=120 blockId="UntilMatchSensor" block="Wait| %pos| %Sensor|to %status"	
 	//% status.min=0 status.max=1
     export function WaitForSensor(pos: InputPosition, sensor: Sensor, status: SensorStatus):void {	
 		let pin_name = DigitalPin.P1;
