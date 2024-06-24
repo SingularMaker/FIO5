@@ -44,3 +44,5 @@ Thumbs.db
 
 # pxt_modules directory
 pxt_modules/
+.pxt
+tsconfig.json
