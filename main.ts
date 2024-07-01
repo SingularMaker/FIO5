@@ -112,20 +112,20 @@ namespace fio5 {
     export function SetLamp(pos: LampPosition, status: Switch): void {
         switch (pos) {
             case LampPosition.M1:
-                pins.analogWritePin(DigitalPin.P16, status);
-                pins.analogWritePin(DigitalPin.P15, 0);
+                pins.digitalWritePin(DigitalPin.P16, status);
+                pins.digitalWritePin(DigitalPin.P15, 0);
                 break;
             case LampPosition.M2:
-                pins.analogWritePin(DigitalPin.P14, status);
-                pins.analogWritePin(DigitalPin.P13, 0);
+                pins.digitalWritePin(DigitalPin.P14, status);
+                pins.digitalWritePin(DigitalPin.P13, 0);
                 break;
             case LampPosition.M3:
-                pins.analogWritePin(DigitalPin.P12, status);
-                pins.analogWritePin(DigitalPin.P10, 0);
+                pins.digitalWritePin(DigitalPin.P12, status);
+                pins.digitalWritePin(DigitalPin.P10, 0);
                 break;
             case LampPosition.M4:
-                pins.analogWritePin(DigitalPin.P9, status);
-                pins.analogWritePin(DigitalPin.P8, 0);
+                pins.digitalWritePin(DigitalPin.P9, status);
+                pins.digitalWritePin(DigitalPin.P8, 0);
                 break;
             case LampPosition.O1:
                 pins.digitalWritePin(DigitalPin.P16, status);
